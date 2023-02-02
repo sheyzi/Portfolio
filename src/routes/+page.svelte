@@ -8,14 +8,14 @@
 
 <div class="md:flex justify-between h-screen">
 	<!-- Work -->
-	<div class="flex ">
+	<div class=" flex">
 		<button on:click={() => (aboutVisible = false)} class="title">
 			{#if !aboutVisible}
 				<iconify-icon icon="carbon:dot-mark" />
 			{/if}
 			<p>Work</p>
 		</button>
-		<div class="overflow-scroll content" class:active={!aboutVisible}>
+		<div class="overflow-scroll content">
 			<p class="h-screen">
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe voluptate obcaecati quidem
 				voluptatum beatae perspiciatis accusantium at ex! Consectetur iste voluptate neque soluta
@@ -31,7 +31,7 @@
 	</div>
 
 	<!-- About -->
-	<div class="flex bg-black text-white z-[9999]">
+	<div class="wrapper flex bg-black text-white z-[9999] about" class:active={aboutVisible}>
 		<button on:click={() => (aboutVisible = true)} class="title">
 			{#if aboutVisible}
 				<iconify-icon icon="carbon:dot-mark" />
@@ -39,7 +39,7 @@
 			<p>About</p>
 		</button>
 
-		<div class="overflow-scroll content" class:active={aboutVisible}>
+		<div class="overflow-scroll content ">
 			<p class="h-screen">
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe voluptate obcaecati quidem
 				voluptatum beatae perspiciatis accusantium at ex! Consectetur iste voluptate neque soluta
@@ -64,6 +64,19 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 2.5rem;
+	}
+
+	.wrapper {
+		width: 2.5rem;
+		transition: all 0.5s ease;
+		position: fixed;
+		height: 100vh;
+		right: 0;
+	}
+
+	.wrapper.active {
+		width: calc(100vw - 2.5rem);
 	}
 
 	.title p {
@@ -72,15 +85,7 @@
 	}
 
 	.content {
-		transform: scaleX(0);
-		width: 0;
-		transition: transform 0.5s ease-in-out;
-		transform-origin: left;
-	}
-
-	.content.active {
-		width: 100%;
-		transform: scaleX(1);
+		padding: 1rem;
 	}
 
 	.content::-webkit-scrollbar {
