@@ -1,4 +1,6 @@
 <script>
+	import Introduction from '$lib/Introduction.svelte';
+
 	let aboutVisible = false;
 </script>
 
@@ -6,9 +8,9 @@
 	<title>Oluwaseyifunmi Oyefeso / Software Engineer</title>
 </svelte:head>
 
-<div class="md:flex justify-between h-screen">
+<div class="md:flex h-screen">
 	<!-- Work -->
-	<div class=" md:flex">
+	<div class=" md:flex w-full">
 		<button on:click={() => (aboutVisible = false)} class="title shadow">
 			<!-- {#if !aboutVisible} -->
 			<iconify-icon class:active={!aboutVisible} class="icon" icon="carbon:dot-mark" />
@@ -16,27 +18,17 @@
 			<p>Work</p>
 		</button>
 		<div class="overflow-scroll content" class:active={!aboutVisible}>
-			<p class="h-screen">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe voluptate obcaecati quidem
-				voluptatum beatae perspiciatis accusantium at ex! Consectetur iste voluptate neque soluta
-				magni tempora voluptates officia sit amet facere.
-			</p>
-
-			<p class="h-screen">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum temporibus aliquam, et
-				porro aspernatur earum! Iste perferendis dolorum, aut possimus blanditiis sed dicta, illo
-				omnis, impedit mollitia voluptates odit ab.
-			</p>
+			<Introduction />
 		</div>
 	</div>
 
 	<!-- About -->
-	<div class="wrapper md:flex bg-black text-white z-[9999] about" class:active={aboutVisible}>
+	<div class="wrapper md:flex bg-[#353535] text-white z-[9999] about" class:active={aboutVisible}>
 		<button on:click={() => (aboutVisible = true)} class="title">
 			<!-- {#if aboutVisible} -->
 			<iconify-icon class:active={aboutVisible} class="icon" icon="carbon:dot-mark" />
 			<!-- {/if} -->
-			<p>About</p>
+			<p class="text-white">About</p>
 		</button>
 
 		<div class="overflow-scroll content " class:active={aboutVisible}>
@@ -86,10 +78,15 @@
 	}
 
 	.content {
-		padding: 1rem;
 		margin-right: 2.5rem;
+		width: 100%;
 		opacity: 0;
 		transition: all 0.5s ease;
+		color: white;
+	}
+
+	.content p {
+		color: white;
 	}
 
 	.content.active {
@@ -118,7 +115,8 @@
 			width: 100%;
 			flex-direction: row;
 			align-items: center;
-			font-size: 1rem;
+			font-size: 1.2rem;
+			height: 2.5rem;
 		}
 		.title p {
 			writing-mode: horizontal-tb;
