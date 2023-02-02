@@ -24,7 +24,7 @@
 	</div>
 
 	<!-- About -->
-	<div class="wrapper md:flex bg-[#191919] text-white z-[9999] about" class:active={aboutVisible}>
+	<div class="wrapper md:flex bg-[#191919] text-white z-[9999] about miny" class:active={aboutVisible}>
 		<button on:click={() => (aboutVisible = true)} class="title">
 			<!-- {#if aboutVisible} -->
 			<iconify-icon class:active={aboutVisible} class="icon text-white" icon="carbon:dot-mark" />
