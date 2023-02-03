@@ -1,5 +1,6 @@
 <script>
 	import Introduction from '$lib/Introduction.svelte';
+	import About from '$lib/About.svelte';
 
 	let aboutVisible = false;
 </script>
@@ -23,31 +24,22 @@
 	</div>
 
 	<!-- About -->
-	<div class="wrapper md:flex bg-[#353535] text-white z-[9999] about" class:active={aboutVisible}>
+	<div class="wrapper md:flex bg-[#191919] text-white z-[9999] about" class:active={aboutVisible}>
 		<button on:click={() => (aboutVisible = true)} class="title">
 			<!-- {#if aboutVisible} -->
-			<iconify-icon class:active={aboutVisible} class="icon" icon="carbon:dot-mark" />
+			<iconify-icon class:active={aboutVisible} class="icon text-white" icon="carbon:dot-mark" />
 			<!-- {/if} -->
 			<p class="text-white">About</p>
 		</button>
 
-		<div class="overflow-scroll content " class:active={aboutVisible}>
-			<p class="h-screen">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe voluptate obcaecati quidem
-				voluptatum beatae perspiciatis accusantium at ex! Consectetur iste voluptate neque soluta
-				magni tempora voluptates officia sit amet facere.
-			</p>
-
-			<p class="h-screen">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum temporibus aliquam, et
-				porro aspernatur earum! Iste perferendis dolorum, aut possimus blanditiis sed dicta, illo
-				omnis, impedit mollitia voluptates odit ab.
-			</p>
+		<div class="overflow-scroll content relative" class:active={aboutVisible}>
+			<About />
 		</div>
 	</div>
 </div>
 
 <style>
+	
 	.title {
 		font-size: 1.5rem;
 		margin: 0;
