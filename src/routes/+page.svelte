@@ -12,7 +12,7 @@
 <div class="md:flex h-screen">
 	<!-- Work -->
 	<div class=" md:flex w-full">
-		<button on:click={() => (aboutVisible = false)} class="title shadow">
+		<button on:click={() => (aboutVisible = false)} class="title shadow border-r-[1px] border-[#35353589]">
 			<!-- {#if !aboutVisible} -->
 			<iconify-icon class:active={!aboutVisible} class="icon" icon="carbon:dot-mark" />
 			<!-- {/if} -->
@@ -24,7 +24,10 @@
 	</div>
 
 	<!-- About -->
-	<div class="wrapper md:flex bg-[#191919] text-white z-[9999] about miny" class:active={aboutVisible}>
+	<div
+		class="wrapper md:flex bg-[#191919] text-white z-[9999] about miny"
+		class:active={aboutVisible}
+	>
 		<button on:click={() => (aboutVisible = true)} class="title">
 			<!-- {#if aboutVisible} -->
 			<iconify-icon class:active={aboutVisible} class="icon text-white" icon="carbon:dot-mark" />
@@ -32,23 +35,23 @@
 			<p class="text-white">About</p>
 		</button>
 
-		<div class="overflow-scroll content relative" class:active={aboutVisible}>
+		<div class="overflow-scroll content pb-[20px]" class:active={aboutVisible}>
 			<About />
 		</div>
 	</div>
+	
 </div>
 
 <style>
-	
 	.title {
-		font-size: 1.5rem;
+		font-size: max(13px,1.5278vw);
 		margin: 0;
 		padding: 0.5rem;
 		cursor: pointer;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 2.5rem;
+		width: 2.9vw;
 	}
 
 	.wrapper {
@@ -95,7 +98,7 @@
 
 	.icon {
 		transform: scale(0);
-		transition: all 0.5s ease;
+		transition: all 1.5s ease;
 	}
 
 	.icon.active {

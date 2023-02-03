@@ -16,7 +16,7 @@
 						<a href="mailto:gistkiosk@gmail.com" class="text-white ">gistkiosk@gmail.com</a>
 					</p>
 				</div>
-				<div class="about-top-contact text-white mb-1">
+				<div class="about-top-contact text-white ">
 					<p class=" text-[hsla(0,0%,94.1%,.5)]">Linkedin</p>
 
 					<p class="flex items-center text-[white] ">
@@ -57,14 +57,71 @@
 			</p>
 		</div>
 	</section>
+	<!-- 
+	<section class="work-experience-container">
+		<div class="border-t-[10px] mx-[20px] pt-2 border-white">
+			<h2 class="text-white text-4xl">Work Experience</h2>
+			<table>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+				</tr>
+				<tr>
+					<td>Row 1, Column 1</td>
+					<td>Row 1, Column 2</td>
+				</tr>
+				<tr>
+					<td>Row 2, Column 1</td>
+					<td>Row 2, Column 2</td>
+				</tr>
+			</table>
+		</div>
+	</section> -->
 
-	<section class="">
-
+	<section class="footer-container ">
+		<div class="footer mx-[20px] flex flex-col mb-[20px]">
+			<div class="flex w-full md:items-end mb-4 flex-col md:flex-row items-end">
+				<h1 class="text-white w-full text-[5.6em] md:text-[12em] md:h-[220px] tracking-[-0.06em] md:mr-auto">Get in touch</h1>
+				<div class="w-[190px] items-start flex flex-col">
+					<div class=" text-white mb-2">
+						<p class="flex items-center text-[white] text-xl">
+							<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
+							<a href="mailto:gistkiosk@gmail.com" class="text-white ">gistkiosk@gmail.com</a>
+						</p>
+					</div>
+					<div class="about-top-contact text-white mb-1">
+						<p class="flex items-center text-[white] text-xl">
+							<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
+							<a href="mailto:gistkiosk@gmail.com" class="text-white ">Linkedin.com</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-3 mb-5">
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+				<div class="border-t-[7px] border-white" />
+			</div>
+			<div class="flex w-full justify-between text-xl text-white">
+				<p>Oluwasheyi Oyefeso</p>
+				<p>Blop Studios 🍭</p>
+				<p>© 2023</p>
+			</div>
+		</div>
 	</section>
-
 </section>
 
 <style>
+	*{
+		transition: all 0.5s ease;
+	}
 	.about-top {
 		--grid-columns: 9;
 		--grid-gap: 8px;
