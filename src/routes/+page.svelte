@@ -1,50 +1,99 @@
-<script>
+<script lang="ts">
 	import Introduction from '$lib/Introduction.svelte';
 	import About from '$lib/About.svelte';
+	import Works from '$lib/Works.svelte';
+	import { browser } from '$app/environment';
 
-	let aboutVisible = false;
+	if (browser) {
+		// g
+		window.addEventListener('scroll', (e) => {
+			let pinElement: any = document.querySelector('.pinned');
+			// if (!aboutVisible) {
+			// 	pinElement.style.position = 'sticky';
+			// 	pinElement.style.top = 0;
+
+			// 	if (aboutVisible === false) {
+			// 		pinElement.style.zIndex = 0;
+			// 	} else pinElement.style.zIndex = 1;
+			// }
+			pinElement.style.position = 'sticky';
+			const y = window.pageYOffset;
+
+			if (y >= 0 && y <= 500) {
+				pinElement.style.top = 0;
+				console.log(y);
+			}
+			console.log(y);
+		});
+		console.log(window);
+	}
+
+	$: aboutVisible = false;
 </script>
 
 <svelte:head>
 	<title>Oluwaseyifunmi Oyefeso / Software Engineer</title>
 </svelte:head>
 
-<div class="md:flex h-screen">
+<button
+	on:click={() => (aboutVisible = false)}
+	class="shadow-lg md:shadow-none  z-[99999] fixed md:h-full title bg-white border-r-[1px] border-[#e6e6e6]"
+>
+	<!-- {#if !aboutVisible} -->
+	<iconify-icon class:active={!aboutVisible} class="icon" icon="carbon:dot-mark" />
+	<!-- {/if} -->
+	<p>Work</p>
+</button>
+
+<div class="md:flex flex-col pinned">
 	<!-- Work -->
-	<div class=" md:flex w-full">
-		<button on:click={() => (aboutVisible = false)} class="title shadow border-r-[1px] border-[#35353589]">
-			<!-- {#if !aboutVisible} -->
-			<iconify-icon class:active={!aboutVisible} class="icon" icon="carbon:dot-mark" />
-			<!-- {/if} -->
-			<p>Work</p>
-		</button>
-		<div class="overflow-scroll content" class:active={!aboutVisible}>
+	<div class=" md:flex w-full  pinned">
+		<div class="overflow-scroll content w-full" class:active={!aboutVisible}>
 			<Introduction />
-		</div>
-	</div>
-
-	<!-- About -->
-	<div
-		class="wrapper md:flex bg-[#191919] text-white z-[9999] about miny"
-		class:active={aboutVisible}
-	>
-		<button on:click={() => (aboutVisible = true)} class="title">
-			<!-- {#if aboutVisible} -->
-			<iconify-icon class:active={aboutVisible} class="icon text-white" icon="carbon:dot-mark" />
-			<!-- {/if} -->
-			<p class="text-white">About</p>
-		</button>
-
-		<div class="overflow-scroll content pb-[20px]" class:active={aboutVisible}>
-			<About />
 		</div>
 	</div>
 	
 </div>
+<div
+	class="wrapper md:flex bg-[#191919] fixed top-0 text-white z-[9999] about"
+	class:active={aboutVisible}
+>
+	<button on:click={() => (aboutVisible = true)} class="title">
+		<!-- {#if aboutVisible} -->
+		<iconify-icon class:active={aboutVisible} class="icon text-white" icon="carbon:dot-mark" />
+		<!-- {/if} -->
+		<p class="text-white">About</p>
+	</button>
+	<div class="overflow-scroll content pb-[20px] z-[999999]" class:active={aboutVisible}>
+		<About />
+	</div>
+</div>
+
+<div class=" work-experience-container pt-[50px] md:mx-[2.5rem] bg-white ">
+	<div class="mx-[20px] border-t border-black mb-5" />
+	<div class="mx-[20px] flex md:w-[1000px] justify-between text-3xl md:mb-[2em]">
+		<p>Selected work</p>
+		<p>2023 - 2020</p>
+	</div>
+
+	<section class=" mx-[20px] flex flex-col gap-[10em] pb-[2em]">
+		<Works />
+		<Works />
+		<Works />
+		<Works />
+	</section>
+</div>
+<div class="pt-[50px] h-[50vh] md:mx-[2.5rem] bg-white">
+		<div class="mx-[20px] border-t border-black" />
+		<div class=" flex md:w-[1000px]  bg-slate-500 justify-between text-3xl">
+			<p>Selecte work</p>
+			<p>2023 - 2020</p>
+		</div>
+	</div>
 
 <style>
 	.title {
-		font-size: max(13px,1.5278vw);
+		font-size: max(13px, 1.5278vw);
 		margin: 0;
 		padding: 0.5rem;
 		cursor: pointer;
@@ -56,10 +105,10 @@
 
 	.wrapper {
 		transition: all 0.5s ease;
-		position: fixed;
 		height: 100vh;
 		left: calc(100vw - 2.5rem);
 		right: calc(-100vw - 2.5rem);
+		position: fixed;
 	}
 
 	.wrapper.active {
@@ -74,18 +123,23 @@
 
 	.content {
 		margin-right: 2.5rem;
+		margin-left: 2.5rem;
 		width: 100%;
 		opacity: 0;
 		transition: all 0.5s ease;
 		color: white;
 	}
 
-	.content p {
-		color: white;
+	p,
+	h2,
+	h3 {
+		letter-spacing: -0.06em;
+		line-height: 105%;
 	}
 
 	.content.active {
 		opacity: 1;
+		position: relative;
 	}
 
 	.wrapper.active .content {
@@ -105,13 +159,20 @@
 		transform: scale(1);
 	}
 
+	.work-experience-container {
+		min-height: 100vh;
+		position: relative;
+		top: 0em;
+		z-index: 999;
+	}
+
 	@media (max-width: 768px) {
 		.title {
 			width: 100%;
 			flex-direction: row;
 			align-items: center;
-			font-size: 1.2rem;
-			height: 2.5rem;
+			font-size: 1.63rem;
+			height: 50px;
 		}
 		.title p {
 			writing-mode: horizontal-tb;
@@ -126,6 +187,10 @@
 			top: calc(100vh - 2.5rem);
 		}
 
+		.content {
+			margin-left: 0;
+			padding-top: 50px;
+		}
 		.wrapper.active {
 			top: 2.5rem;
 			left: 0;

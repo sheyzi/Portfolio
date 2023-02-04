@@ -1,4 +1,4 @@
-<section class="text-white h-[100vh] pt-[20px]">
+<section class="text-white h-[100vh] pt-[20px] z-[99999] container">
 	<section class="about-top-container">
 		<div class="about-top ">
 			<h2 class="item-1 text-white">
@@ -21,7 +21,7 @@
 
 					<p class="flex items-center text-[white] ">
 						<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
-						<a href="mailto:gistkiosk@gmail.com" class="text-white ">Linkedin.com</a>
+						<a href="https://www.linkedin.com/in/oluwaseyifunmi-oyefeso-29181b263" class="text-white ">Linkedin.com</a>
 					</p>
 				</div>
 			</div>
@@ -78,44 +78,7 @@
 		</div>
 	</section> -->
 
-	<section class="footer-container ">
-		<div class="footer mx-[20px] flex flex-col mb-[20px]">
-			<div class="flex w-full md:items-end mb-4 flex-col md:flex-row items-end">
-				<h1 class="text-white w-full text-[5.6em] md:text-[12em] md:h-[220px] tracking-[-0.06em] md:mr-auto">Get in touch</h1>
-				<div class="w-[190px] items-start flex flex-col">
-					<div class=" text-white mb-2">
-						<p class="flex items-center text-[white] text-xl">
-							<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
-							<a href="mailto:gistkiosk@gmail.com" class="text-white ">gistkiosk@gmail.com</a>
-						</p>
-					</div>
-					<div class="about-top-contact text-white mb-1">
-						<p class="flex items-center text-[white] text-xl">
-							<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
-							<a href="mailto:gistkiosk@gmail.com" class="text-white ">Linkedin.com</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="flex flex-col gap-3 mb-5">
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-				<div class="border-t-[7px] border-white" />
-			</div>
-			<div class="flex w-full justify-between text-xl text-white">
-				<p>Oluwasheyi Oyefeso</p>
-				<p>Blop Studios 🍭</p>
-				<p>© 2023</p>
-			</div>
-		</div>
-	</section>
+	
 </section>
 
 <style>
