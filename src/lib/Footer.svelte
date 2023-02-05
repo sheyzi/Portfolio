@@ -3,7 +3,7 @@
 </script>
 
 
-<div class="footer mx-[20px] flex flex-col mb-[150px]">
+<div class="footer mx-[20px] flex flex-col mb-[150px] md:mb-[10px]">
 			<div class="flex w-full md:items-end mb-4 flex-col md:flex-row items-end">
 				<h1 class="{aboutVisible ? 'text-white' : 'text-[#191919]'} w-full text-[4.5em] md:text-[12em] md:h-[220px] tracking-[-0.06em] md:mr-auto">Get in touch</h1>
 				<div class="{aboutVisible ? 'w-[190px]' : 'w-[250px]'} items-start flex flex-col">
