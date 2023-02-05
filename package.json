@@ -32,6 +32,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@studio-freight/lenis": "^0.2.28",
+		"gsap": "^3.11.4",
 		"iconify-icon": "^1.0.3"
 	}
 }
