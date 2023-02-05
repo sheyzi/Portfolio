@@ -2,12 +2,14 @@
 	import Introduction from '$lib/Introduction.svelte';
 	import About from '$lib/About.svelte';
 	import Works from '$lib/Works.svelte';
+	import Footer from '$lib/Footer.svelte';
 	import { browser } from '$app/environment';
 
 	if (browser) {
 		// g
 		window.addEventListener('scroll', (e) => {
 			let pinElement: any = document.querySelector('.pinned');
+			let bottom : any = document.querySelector('.down');
 			// if (!aboutVisible) {
 			// 	pinElement.style.position = 'sticky';
 			// 	pinElement.style.top = 0;
@@ -21,9 +23,11 @@
 
 			if (y >= 0 && y <= 500) {
 				pinElement.style.top = 0;
-				console.log(y);
 			}
-			console.log(y);
+			if ( y >= 1000) {
+				bottom.style.display = 'block'
+			}
+			else bottom.style.display = 'none'
 		});
 		console.log(window);
 	}
@@ -64,14 +68,14 @@
 		<!-- {/if} -->
 		<p class="text-white">About</p>
 	</button>
-	<div class="overflow-scroll content pb-[20px] z-[999999]" class:active={aboutVisible}>
-		<About />
+	<div class="overflow-scroll content pb-[30px] z-[999999] " class:active={aboutVisible}>
+		<About {aboutVisible}/>
 	</div>
 </div>
 
 <div class=" work-experience-container pt-[50px] md:mx-[2.5rem] bg-white ">
 	<div class="mx-[20px] border-t border-black mb-5" />
-	<div class="mx-[20px] flex md:w-[1000px] justify-between text-3xl md:mb-[2em]">
+	<div class="mx-[20px] flex md:w-[1000px] justify-between md:text-3xl text-xl md:mb-[2em] mb-[1em]">
 		<p>Selected work</p>
 		<p>2023 - 2020</p>
 	</div>
@@ -83,13 +87,10 @@
 		<Works />
 	</section>
 </div>
-<div class="pt-[50px] h-[50vh] md:mx-[2.5rem] bg-white">
-		<div class="mx-[20px] border-t border-black" />
-		<div class=" flex md:w-[1000px]  bg-slate-500 justify-between text-3xl">
-			<p>Selecte work</p>
-			<p>2023 - 2020</p>
-		</div>
-	</div>
+
+<section class="footer-container sticky bottom-0 down md:mx-[2.5rem] bg-white">
+		<Footer {aboutVisible}/>
+	</section>
 
 <style>
 	.title {
@@ -144,6 +145,7 @@
 
 	.wrapper.active .content {
 		margin-right: 0;
+		margin-left: 0;
 	}
 
 	.content::-webkit-scrollbar {
@@ -165,7 +167,9 @@
 		top: 0em;
 		z-index: 999;
 	}
-
+	.down{
+		display: none;
+	}
 	@media (max-width: 768px) {
 		.title {
 			width: 100%;

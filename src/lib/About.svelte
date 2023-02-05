@@ -1,4 +1,10 @@
-<section class="text-white h-[100vh] pt-[20px] z-[99999] container">
+<script>
+	import Footer from './Footer.svelte';
+	export let aboutVisible;
+	
+</script>
+
+<section class="text-white md:pt-[20px] z-[99999] container pb-[4em]">
 	<section class="about-top-container">
 		<div class="about-top ">
 			<h2 class="item-1 text-white">
@@ -78,7 +84,9 @@
 		</div>
 	</section> -->
 
-	
+	<section class="footer-container mb:mb-0 ">
+		<Footer {aboutVisible}/>
+	</section>
 </section>
 
 <style>
@@ -127,7 +135,9 @@
 		padding-bottom: 120px;
 		height: max(calc(100vh - 100px), 580px);
 	}
-
+	.container{
+	  height: 100vh;
+	}
 	@media (max-width: 768px) {
 		.about-top-container {
 			padding-top: 48px;
