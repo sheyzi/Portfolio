@@ -1,19 +1,18 @@
-<script>
+<script lang="ts">
 	import Footer from './Footer.svelte';
-	export let aboutVisible;
-	
+	export let aboutVisible: boolean;
 </script>
 
-<section class="text-white md:pt-[20px] z-[99999] container pb-[4em]">
+<section class="text-white md:pt-[20px] z-[99999] container pb-[4em] md:pr-[2.5rem]">
 	<section class="about-top-container">
 		<div class="about-top ">
-			<h2 class="item-1 text-white">
+			<h2 class="item-1 text-white text-3xl md:text-3xl">
 				I create beautiful responsive websites. My flexibility as an independent developer means
 				more dedication to enliven creative and interactive designs, all with natural usability at
 				their core. Years of agency experience equips me to work closely with designers and
 				developers to deliver on projects in an optimised and thorough way.
 			</h2>
-			<div class="item-2 ">
+			<div class="item-2 text-xl md:text-3xl">
 				<div class="about-top-contact text-white mb-2">
 					<p class=" text-[hsla(0,0%,94.1%,.5)]">Mail</p>
 
@@ -27,7 +26,10 @@
 
 					<p class="flex items-center text-[white] ">
 						<iconify-icon class="text-white" icon="carbon:dot-mark" width="20" />
-						<a href="https://www.linkedin.com/in/oluwaseyifunmi-oyefeso-29181b263" class="text-white ">Linkedin.com</a>
+						<a
+							href="https://www.linkedin.com/in/oluwaseyifunmi-oyefeso-29181b263"
+							class="text-white ">Linkedin.com</a
+						>
 					</p>
 				</div>
 			</div>
@@ -40,7 +42,7 @@
 		>
 			<h3 class="w-[60%] text-white text-3xl">My stack</h3>
 
-			<ul class="text-white text-[45px] ml-[3em]">
+			<ul class="text-white md:text-4xl text-3xl ml-[3em]">
 				<li>Sveltekit</li>
 				<li>NestJS</li>
 				<li>FastApi</li>
@@ -56,7 +58,7 @@
 		>
 			<h3 class=" text-white text-2xl">Client list</h3>
 
-			<p class="text-white text-[45px]">
+			<p class="text-white md:text-4xl text-3xl">
 				Cooversa, Dept, Kontrapunkt, AM Copenhagen, Kontainer, Day21, Studio GD, Eksakte, Lousiana,
 				Betty Nansen, Snedkernes Efterårsudstilling, Det Danske Akademi, Specsavers, Beatroot
 				Studio, Grant Compass, Uruggo
@@ -85,32 +87,31 @@
 	</section> -->
 
 	<section class="footer-container mb:mb-0 ">
-		<Footer {aboutVisible}/>
+		<Footer {aboutVisible} />
 	</section>
 </section>
 
 <style>
-	*{
+	* {
 		transition: all 0.5s ease;
 	}
 	.about-top {
-		--grid-columns: 9;
-		--grid-gap: 8px;
-		display: grid;
-		grid-column-gap: var(--grid-gap);
-		grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+		display: flex;
+		flex-direction: column;
 		margin-left: 20px;
 		margin-right: 20px;
+		justify-content: space-between;
+		/* align-items: flex-end; */
 	}
 	.item-1 {
 		grid-column: 2/-1;
 		letter-spacing: -0.06em;
 		line-height: 105%;
-		font-size: max(30px, 3.2vw);
+		/* font-size: max(30px, 3.2vw); */
 	}
 	.item-2 {
 		grid-column: 1 / span 4;
-		font-size: min(5vw, 28px);
+		/* font-size: min(5vw, 28px); */
 		align-self: end;
 		margin-top: 70px;
 	}
@@ -135,8 +136,8 @@
 		padding-bottom: 120px;
 		height: max(calc(100vh - 100px), 580px);
 	}
-	.container{
-	  height: 100vh;
+	.container {
+		height: 100vh;
 	}
 	@media (max-width: 768px) {
 		.about-top-container {
@@ -145,7 +146,7 @@
 		}
 		.item-1 {
 			grid-column: 1/-1;
-			font-size: min(10vw, 60px);
+			/* font-size: min(10vw, 60px); */
 		}
 		.item-2 {
 			grid-column: 1/-1;

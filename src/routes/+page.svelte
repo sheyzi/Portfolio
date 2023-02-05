@@ -9,7 +9,7 @@
 		// g
 		window.addEventListener('scroll', (e) => {
 			let pinElement: any = document.querySelector('.pinned');
-			let bottom : any = document.querySelector('.down');
+			let bottom: any = document.querySelector('.down');
 			// if (!aboutVisible) {
 			// 	pinElement.style.position = 'sticky';
 			// 	pinElement.style.top = 0;
@@ -24,10 +24,9 @@
 			if (y >= 0 && y <= 500) {
 				pinElement.style.top = 0;
 			}
-			if ( y >= 1000) {
-				bottom.style.display = 'block'
-			}
-			else bottom.style.display = 'none'
+			if (y >= 1000) {
+				bottom.style.display = 'block';
+			} else bottom.style.display = 'none';
 		});
 		console.log(window);
 	}
@@ -56,7 +55,6 @@
 			<Introduction />
 		</div>
 	</div>
-	
 </div>
 <div
 	class="wrapper md:flex bg-[#191919] fixed top-0 text-white z-[9999] about"
@@ -69,28 +67,54 @@
 		<p class="text-white">About</p>
 	</button>
 	<div class="overflow-scroll content pb-[30px] z-[999999] " class:active={aboutVisible}>
-		<About {aboutVisible}/>
+		<About {aboutVisible} />
 	</div>
 </div>
 
 <div class=" work-experience-container pt-[50px] md:mx-[2.5rem] bg-white ">
 	<div class="mx-[20px] border-t border-black mb-5" />
-	<div class="mx-[20px] flex md:w-[1000px] justify-between md:text-3xl text-xl md:mb-[2em] mb-[1em]">
+	<div
+		class="mx-[20px] flex md:w-[1000px] justify-between md:text-3xl text-xl md:mb-[2em] mb-[1em]"
+	>
 		<p>Selected work</p>
 		<p>2023 - 2020</p>
 	</div>
 
 	<section class=" mx-[20px] flex flex-col gap-[10em] pb-[2em]">
-		<Works />
-		<Works />
-		<Works />
-		<Works />
+		<Works
+			name="Cooversa"
+			description="Fullstack developer on the website and the LMS."
+			department="Fullstack Developer"
+			video="/video.mp4"
+			url="https://cooversa.com"
+		/>
+		<Works
+			name="Uruggo"
+			description="I built both the backend and the frontend of Uruggo."
+			department="IT Dept"
+			video="/video.mp4"
+			url="https://uruggo.com"
+		/>
+		<Works
+			name="Sisi Oni Dukia"
+			description="Fullstack developer on the new website for Sisi Oni Dukia."
+			department="IT Dept"
+			video="/video.mp4"
+			url="https://sisionidukia.com"
+		/>
+		<Works
+			name="RTech Diagnostics"
+			description="Fullstack developer on the mobile app for RTech Diagnostics."
+			department="IT Dept"
+			video="/video.mp4"
+			url="https://cooversa.com"
+		/>
 	</section>
 </div>
 
 <section class="footer-container sticky bottom-0 down md:mx-[2.5rem] bg-white">
-		<Footer {aboutVisible}/>
-	</section>
+	<Footer {aboutVisible} />
+</section>
 
 <style>
 	.title {
@@ -101,7 +125,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 2.9vw;
+		width: 2.5rem;
 	}
 
 	.wrapper {
@@ -110,6 +134,12 @@
 		left: calc(100vw - 2.5rem);
 		right: calc(-100vw - 2.5rem);
 		position: fixed;
+		display: flex;
+		width: 100%;
+	}
+
+	.wrapper button {
+		width: 2.5rem;
 	}
 
 	.wrapper.active {
@@ -131,9 +161,7 @@
 		color: white;
 	}
 
-	p,
-	h2,
-	h3 {
+	p {
 		letter-spacing: -0.06em;
 		line-height: 105%;
 	}
@@ -167,7 +195,7 @@
 		top: 0em;
 		z-index: 999;
 	}
-	.down{
+	.down {
 		display: none;
 	}
 	@media (max-width: 768px) {
@@ -189,6 +217,7 @@
 			right: 0;
 			bottom: 0;
 			top: calc(100vh - 2.5rem);
+			display: block;
 		}
 
 		.content {
@@ -198,6 +227,10 @@
 		.wrapper.active {
 			top: 2.5rem;
 			left: 0;
+		}
+
+		.wrapper button {
+			width: 100%;
 		}
 	}
 </style>
